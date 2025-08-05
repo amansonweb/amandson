@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AM&SON</title>
+  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <style>
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .about-img {
+      flex: 1 1 45%;
+      max-width: 500px;
+      border-radius: 12px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .about-text {
+      flex: 1 1 45%;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <!--<img src="content/logo-2.png" alt="Mina Estate Logo" />-->
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="https://managerentalunit.com/">Get Started</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="content/background-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-text">
+      <h1>AM&Son</h1>
+      <p>Property Maintenance Management</p>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <h2>About AM&Son</h2>
+    <div class="about-content">
+      <img src="content/about.jpg" alt="About Mina Estate" class="about-img" />
+      <div class="about-text">
+        <p>AM&Son is your reliable property maintenance partner based in Georgia. Built by landlords for landlords, we understand the headache of dealing with leaky sinks, HVAC issues and much more.</p>
+        <p>With our smart maintenance model and AI tools, we help you focus on profit — not problems. Whether you're a seasoned investor or just getting started, AM&Son simplifies your real estate journey with powerful tech and dependable service.</p>
+        <p>We also provide detailed monthly reports and real-time updates, so you’re never in the dark. Think of us as your behind-the-scenes partner — keeping your rentals running smoothly while you scale your portfolio with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="card-section">
+    <h2>Services</h2>
+    <div class="services">
+      <div class="service-card" onclick="openModal()">
+        <img src="content/maintenance.jpg" alt="Maintenance" />
+        <h3>Tenant Maintenance Handling</h3>
+        <p>We handle maintenance requests from tenants, dispatch service providers, and ensure repairs are resolved — all for $99/month per unit.</p>
+      </div>
+      <div class="service-card" onclick="openGptModal()">
+        <img src="content/ai.jpg" alt="AI Tools" />
+        <h3>GPT Tools for Investors (Coming Soon!)</h3>
+        <p>Smart GPT-powered assistants to help real estate investors analyze deals, manage portfolios, and make data-driven decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="maintenanceModal" class="modal-overlay">
+    <div class="modal-content">
+      <h3>Tenant Maintenance Services</h3>
+      <ul>
+        <li>Plumbing issues (leaks, clogs)</li>
+        <li>HVAC repairs and maintenance</li>
+        <li>Appliance troubleshooting</li>
+        <li>Electrical fixes (lights, switches, outlets)</li>
+        <li>Emergency dispatch services</li>
+        <li>Routine property inspections</li>
+        <li>Maintenance record tracking</li>
+      </ul>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <div id="gptModal" class="modal-overlay">
+    <div class="modal-content">
+      <h3>GPT Tools for Real Estate Investors</h3>
+      <ul>
+        <li>Evaluate properties for fix-and-flip potential</li>
+        <li>Analyze ROI for rental properties</li>
+        <li>Identify ideal markets for wholesaling</li>
+        <li>Compare deals using cash flow and appreciation metrics</li>
+        <li>Get instant feedback on investment risks</li>
+      </ul>
+      <button onclick="closeGptModal()">Close</button>
+    </div>
+  </div>
+
+  <section id="comparison" class="comparison-section">
+  <h2>Comparison</h2>
+  <div class="comparison-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Features</th>
+          <th>AM&Son</th>
+          <th>Property Management Companies</th>
+          <th>Home Warranty Companies</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Flat Monthly Pricing</td>
+          <td>✅ $99/mo</td>
+          <td>❌ % of rent (avg 8–12%)</td>
+          <td>✅ Fixed plans, often tiered</td>
+        </tr>
+        <tr>
+          <td>Handles Only What You Need (Repairs)</td>
+          <td>✅</td>
+          <td>❌ Full management required</td>
+          <td>✅/❌ Depends on plan & issue</td>
+        </tr>
+        <tr>
+          <td>No Long-Term Contracts</td>
+          <td>✅ Cancel anytime</td>
+          <td>❌ Annual agreements</td>
+          <td>❌ 12-month minimum</td>
+        </tr>
+        <tr>
+          <td>Use Your Own Vendors</td>
+          <td>✅ Or use ours</td>
+          <td>❌ Typically use in-house only</td>
+          <td>❌ Must use network contractors</td>
+        </tr>
+        <!--<tr>
+          <td>AI Tools for Investors</td>
+          <td>✅ Included</td>
+          <td>❌ None</td>
+          <td>❌ None</td>
+        </tr>-->
+        <tr>
+          <td>Unlimited Maintenance Requests (No Per-Call Fees)</td>
+          <td>✅ Tenants submit freely. Owners notified instantly.</td>
+          <td>❌ Often billed per work order or call</td>
+          <td>❌ Charged per service request or denied</td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+  <section id="why-us" class="why-us">
+    <h2>Why Choose AM&Son?</h2>
+    <div class="why-us-grid">
+      <div class="why-card"><p><strong>No Lease Management</strong><br>Only what matters most: repairs and support</p></div>
+      <div class="why-card"><p><strong>Transparent Pricing</strong><br>Flat monthly fees with no hidden charges</p></div>
+      <div class="why-card"><p><strong>AI-Powered Insights</strong><br>Smart tools to help investors grow</p></div>
+      <div class="why-card"><p><strong>Trusted Vendor Network</strong><br>Licensed service pros across Georgia</p></div>
+      <div class="why-card"><p><strong>Emergency Support</strong><br>We handle the urgent stuff so you don’t have to</p></div>
+      <div class="why-card"><p><strong>Custom Monthly Reports</strong><br>Know exactly how your property is performing</p></div>
+      <div class="why-card"><p><strong>Local Georgia Expertise</strong><br>We know the neighborhoods, laws, and markets</p></div>
+      <div class="why-card"><p><strong>Free Property Evaluation</strong><br>We assess your unit before onboarding, 100% free</p></div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>What does the $99/month service include?</h3>
+    <p>It covers tenant maintenance handling, service dispatch, emergency support, and monthly reporting.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do you manage lease agreements?</h3>
+    <p>No, we focus solely on maintenance and support, so you can handle leasing the way you prefer.</p>
+  </div>
+  <div class="faq-item">
+  <h3>How quickly do you respond to maintenance requests?</h3>
+  <p>We dispatch service providers within 24 hours for standard issues and immediately for emergencies.</p>
+</div>
+<div class="faq-item">
+  <h3>Do I need to be in Georgia to use your services?</h3>
+  <p>No. As long as the property is located in Georgia, we manage the maintenance requests for you!</p>
+</div>
+<div class="faq-item">
+  <h3>Can I cancel my service anytime?</h3>
+  <p>Yes, our service is month-to-month with no long-term contracts. You can cancel anytime with no penalty.</p>
+</div>
+
+</section>
+
+<section id="onboarding" class="onboarding-section">
+  <h2>How to Get Started</h2>
+  <div class="onboarding-steps">
+    <div class="step-card">
+      <h3>Step 1</h3>
+      <p>Book a free session to evaluate the property and for us to explain how AM&Son works.</p>
+    </div>
+    <div class="step-card">
+      <h3>Step 2</h3>
+      <p>We send over an agreement contract for your review and signature.</p>
+    </div>
+    <div class="step-card">
+      <h3>Step 3</h3>
+      <p>We send the owner a property onboarding form, and the tenant receives a maintenance request form.</p>
+    </div>
+    <div class="step-card">
+      <h3>Step 4</h3>
+      <p>Sit back! You’ll get notified by email every time your tenant submits a request.</p>
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="contact">
+  <h2>Get In Touch</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.5rem;">
+    <div style="background: #ffffff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); flex: 1 1 300px;">
+      <p><strong>📧 Email:</strong> support@amandson.com</p>
+    </div>
+    <div style="background: #ffffff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); flex: 1 1 300px;">
+      <p><strong>📍 Serving:</strong> Georgia</p>
+    </div>
+    <div style="background: #ffffff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); flex: 1 1 300px;">
+        <p><strong>📅 Schedule:</strong> <a href="https://calendly.com/amandson-support" style="text-decoration: none; color: #003366;">Book a Free Consultation</a></p>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    &copy; 2025 AM&Son Estate. All rights reserved.
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
