@@ -1,41 +1,97 @@
-function openModal() {
-  document.getElementById('maintenanceModal').style.display = 'flex';
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-function closeModal() {
-  document.getElementById('maintenanceModal').style.display = 'none';
-}
+  /* =========================
+     TYPING EFFECT
+  ========================= */
 
-function openGptModal() {
-  document.getElementById('gptModal').style.display = 'flex';
-}
+  const phrases = [
+    "With Strategy.",
+    "With Confidence.",
+    "With AMSON."
+  ];
 
-function closeGptModal() {
-  document.getElementById('gptModal').style.display = 'none';
-}
+  const typedText = document.getElementById("typed-text");
 
-window.addEventListener('click', function(e) {
-  if (e.target.id === 'maintenanceModal') closeModal();
-  if (e.target.id === 'gptModal') closeGptModal();
-});
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-// Smooth scroll behavior for nav links
-window.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
+  const typingSpeed = 80;
+  const deletingSpeed = 50;
+  const pauseAfterTyping = 1400;
+
+  function typeLoop() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (!isDeleting) {
+      typedText.textContent = currentPhrase.slice(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentPhrase.length) {
+        setTimeout(() => (isDeleting = true), pauseAfterTyping);
       }
-    });
+    } else {
+      typedText.textContent = currentPhrase.slice(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+    }
+
+    setTimeout(
+      typeLoop,
+      isDeleting ? deletingSpeed : typingSpeed
+    );
+  }
+
+  if (typedText) typeLoop();
+
+
+  /* =========================
+     PROMO BANNER
+  ========================= */
+
+  const banner = document.getElementById("promoBanner");
+  const closeBtn = document.getElementById("promoClose");
+
+  if (!banner || !closeBtn) return;
+
+  /* 🔥 FORCE SHOW ON EVERY REFRESH */
+  localStorage.removeItem("promoDismissed");
+
+  document.body.classList.add("has-banner");
+
+  closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    banner.style.transform = "translateY(-100%)";
+    banner.style.opacity = "0";
+
+    document.body.classList.remove("has-banner");
+
+    setTimeout(() => banner.remove(), 400);
+
+    localStorage.setItem("promoDismissed", "true");
+  });
+
+
+  /* HOW DOES IT WORK NAV */
+const tabs = document.querySelectorAll(".feature-tab");
+const panels = document.querySelectorAll(".feature-panel");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    // Remove active states
+    tabs.forEach(t => t.classList.remove("active"));
+    panels.forEach(p => p.classList.remove("active"));
+
+    // Activate clicked tab
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.tab).classList.add("active");
   });
 });
 
-// Toggle mobile menu
-function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('show');
-} 
+});
