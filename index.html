@@ -2,269 +2,442 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>AMSON — Smart Investing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AM&SON</title>
-  <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <style>
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-    }
-    .about-img {
-      flex: 1 1 45%;
-      max-width: 500px;
-      border-radius: 12px;
-      width: 100%;
-      object-fit: cover;
-    }
-    .about-text {
-      flex: 1 1 45%;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <div class="nav-left">
-      <!--<img src="content/logo-2.png" alt="Mina Estate Logo" />-->
-    </div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-      <a href="https://managerentalunit.com/">Get Started</a>
-    </div>
-  </nav>
 
-  <div class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="content/background-video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="hero-text">
-      <h1>AM&Son</h1>
-      <p>Property Maintenance Management</p>
-    </div>
+  <!-- COMPETITION BANNER -->
+<div class="promo-banner" id="promoBanner">
+  <span class="promo-text">
+    🏆 <strong>$300 AMSON Challenge</strong> — Start with $100,000 virtual capital.
+    Only <strong>10 spots</strong> available. Apply Now
+  </span>
+
+  <button class="promo-close" id="promoClose">✕</button>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo">
+  <img src="logo.png" alt="AMSON logo" />
   </div>
 
-  <section id="about" class="about">
-    <h2>About AM&Son</h2>
-    <div class="about-content">
-      <img src="content/about.jpg" alt="About Mina Estate" class="about-img" />
-      <div class="about-text">
-        <p>AM&Son is your reliable property maintenance partner based in Georgia. Built by landlords for landlords, we understand the headache of dealing with leaky sinks, HVAC issues and much more.</p>
-        <p>With our smart maintenance model and AI tools, we help you focus on profit — not problems. Whether you're a seasoned investor or just getting started, AM&Son simplifies your real estate journey with powerful tech and dependable service.</p>
-        <p>We also provide detailed monthly reports and real-time updates, so you’re never in the dark. Think of us as your behind-the-scenes partner — keeping your rentals running smoothly while you scale your portfolio with confidence.</p>
+<ul class="nav-links">
+  <li><a href="#wwws">WWW's</a></li>
+  <li><a href="#how-it-works">How it Works?</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="#safety">Safety</a></li>
+</ul>
+
+  <button class="nav-btn">Apply Now</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+
+    <!-- PHONE LEFT -->
+    <div class="phone-wrapper">
+      <div class="glow"></div>
+      <img src="photo2.png" alt="AMSON App" class="phone-img" />
+    </div>
+
+    <!-- TEXT RIGHT -->
+    <div class="text-wrapper">
+      <h1 class="headline">
+        Imagine investing…<br />
+        <span id="typed-text"></span>
+      </h1>
+
+
+      <!-- SUBTITLE -->
+      <p class="subtitle">
+        Stock analysis, smart recommendations, and
+        portfolio diversification — all in one app.
+      </p>
+
+      <!-- DOWNLOAD BUTTONS -->
+      <div class="store-buttons">
+        <a href="#" class="store-btn app-store">
+           App Store
+        </a>
+        <a href="#" class="store-btn play-store">
+          ▶ Google Play
+        </a>
       </div>
     </div>
-  </section>
 
-  <section id="services" class="card-section">
-    <h2>Services</h2>
-    <div class="services">
-      <div class="service-card" onclick="openModal()">
-        <img src="content/maintenance.jpg" alt="Maintenance" />
-        <h3>Tenant Maintenance Handling</h3>
-        <p>We handle maintenance requests from tenants, dispatch service providers, and ensure repairs are resolved — all for $99/month per unit.</p>
-      </div>
-      <div class="service-card" onclick="openGptModal()">
-        <img src="content/ai.jpg" alt="AI Tools" />
-        <h3>GPT Tools for Investors (Coming Soon!)</h3>
-        <p>Smart GPT-powered assistants to help real estate investors analyze deals, manage portfolios, and make data-driven decisions.</p>
-      </div>
+  </div>
+</section>
+
+<!-- WHAT / WHY AMSON -->
+<section class="about" id="wwws">
+  <div class="about-inner">
+
+    <!-- SECTION HEADER -->
+    <div class="about-header">
+      <h2 class="about-heading">
+  A <span class="highlight">Smarter</span> way to learn investing
+    </h2>
+      <p class="about-subheading">
+        Built for clarity, confidence, and risk-free exploration.
+      </p>
     </div>
-  </section>
 
-  <div id="maintenanceModal" class="modal-overlay">
-    <div class="modal-content">
-      <h3>Tenant Maintenance Services</h3>
-      <ul>
-        <li>Plumbing issues (leaks, clogs)</li>
-        <li>HVAC repairs and maintenance</li>
-        <li>Appliance troubleshooting</li>
-        <li>Electrical fixes (lights, switches, outlets)</li>
-        <li>Emergency dispatch services</li>
-        <li>Routine property inspections</li>
-        <li>Maintenance record tracking</li>
+ <div class="about-cards">
+
+  <!-- WHAT -->
+  <div class="about-card">
+    <span class="card-label">WHAT AMSON IS</span>
+    <h3 class="card-title">Practice investing without real risk</h3>
+    <p class="card-text">
+      AMSON is a smart investing app that lets you explore the stock market,
+      analyze opportunities, and practice trading strategies using virtual
+      capital — not real money.
+    </p>
+  </div>
+
+  <!-- WHY -->
+  <div class="about-card accent">
+    <span class="card-label">WHY USE AMSON</span>
+    <h3 class="card-title">Confidence before real decisions</h3>
+    <p class="card-text">
+      Investing can feel complex and overwhelming. AMSON gives you a structured,
+      risk-free environment to learn, experiment, and develop confidence
+      before putting real money on the line.
+    </p>
+  </div>
+
+  <!-- WHO -->
+  <div class="about-card subtle">
+    <span class="card-label">WHO IT’S BUILT FOR</span>
+    <h3 class="card-title">Anyone learning the market</h3>
+    <p class="card-text">
+      AMSON is built for beginners, students, and curious thinkers who want to
+      understand investing, test ideas, and develop strategies without the
+      pressure of real financial risk.
+    </p>
+  </div>
+
+</div>
+
+
+  </div>
+</section>
+
+<section class="how-it-works" id="how-it-works">
+
+  <!-- SECTION HEADER -->
+  <div class="section-header">
+    <h2 class="section-title">
+      How <span class="highlight">AMSON</span> works
+    </h2>
+    <p class="section-subtitle">
+      Learn, practice, and build confidence using real market data — without real risk.
+    </p>
+  </div>
+
+  <!-- FEATURE NAV -->
+  <div class="feature-nav">
+    <button class="feature-tab active" data-tab="paper">Paper Trading</button>
+    <button class="feature-tab" data-tab="signals">Signals & Sentiment</button>
+    <button class="feature-tab" data-tab="picks">Smart Picks</button>
+    <button class="feature-tab" data-tab="watchlist">Watchlist</button>
+  </div>
+
+  <!-- FEATURES -->
+
+  <!-- PAPER TRADING -->
+  <div class="feature-panel active" id="paper">
+    <div class="feature-card">
+
+      <div class="feature-text">
+        <h3>Practice with virtual capital</h3>
+
+        <p class="feature-intro">
+        Practice real-world investing using virtual capital and live market data.
+        AMSON’s paper trading environment lets you explore how the market behaves,
+        place trades with confidence, and understand risk — without putting real
+        money on the line.
+      </p>
+
+      <ul class="feature-points">
+        <li>Trade using real-time market prices and live data</li>
+        <li>Execute paper buy and sell orders just like a real brokerage</li>
+        <li>Track portfolio performance over time</li>
+        <li>Test strategies and learn from outcomes without financial risk</li>
+        <li>Build confidence before transitioning to real investing</li>
       </ul>
-      <button onclick="closeModal()">Close</button>
+
+      </div>
+
+      <div class="feature-screen">
+        <img src="paper-trading.png" alt="Paper trading screen" />
+      </div>
+
     </div>
   </div>
 
-  <div id="gptModal" class="modal-overlay">
-    <div class="modal-content">
-      <h3>GPT Tools for Real Estate Investors</h3>
-      <ul>
-        <li>Evaluate properties for fix-and-flip potential</li>
-        <li>Analyze ROI for rental properties</li>
-        <li>Identify ideal markets for wholesaling</li>
-        <li>Compare deals using cash flow and appreciation metrics</li>
-        <li>Get instant feedback on investment risks</li>
+  <!-- SIGNALS -->
+  <div class="feature-panel" id="signals">
+    <div class="feature-card">
+
+      <div class="feature-text">
+        <h3>Signals powered by community insight</h3>
+
+        <p class="feature-intro">
+         Make more informed decisions by combining market data analysis with 
+         real sentiment from the AMSON community.Signals are designed to provide 
+         context, not hype — helping you understand potential outcomes before 
+         taking action.
+      </p>
+
+      <ul class="feature-points">
+        <li>Buy, hold, and sell signals based on market data</li>
+        <li>Community voting reveals how others expect the stock to move</li>
+        <li>Confidence scores summarize risk and sentiment at a glance</li>
+        <li>Built to support learning, not emotional trading</li>
       </ul>
-      <button onclick="closeGptModal()">Close</button>
+
+      </div>
+
+      <div class="feature-screen">
+        <img src="signals.png" alt="Signals and sentiment screen" />
+      </div>
+
     </div>
   </div>
 
-  <section id="comparison" class="comparison-section">
-  <h2>Comparison</h2>
-  <div class="comparison-table">
-    <table>
-      <thead>
-        <tr>
-          <th>Features</th>
-          <th>AM&Son</th>
-          <th>Property Management Companies</th>
-          <th>Home Warranty Companies</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Flat Monthly Pricing</td>
-          <td>✅ $99/mo</td>
-          <td>❌ % of rent (avg 8–12%)</td>
-          <td>✅ Fixed plans, often tiered</td>
-        </tr>
-        <tr>
-          <td>Handles Only What You Need (Repairs)</td>
-          <td>✅</td>
-          <td>❌ Full management required</td>
-          <td>✅/❌ Depends on plan & issue</td>
-        </tr>
-        <tr>
-          <td>No Long-Term Contracts</td>
-          <td>✅ Cancel anytime</td>
-          <td>❌ Annual agreements</td>
-          <td>❌ 12-month minimum</td>
-        </tr>
-        <tr>
-          <td>Use Your Own Vendors</td>
-          <td>✅ Or use ours</td>
-          <td>❌ Typically use in-house only</td>
-          <td>❌ Must use network contractors</td>
-        </tr>
-        <!--<tr>
-          <td>AI Tools for Investors</td>
-          <td>✅ Included</td>
-          <td>❌ None</td>
-          <td>❌ None</td>
-        </tr>-->
-        <tr>
-          <td>Unlimited Maintenance Requests (No Per-Call Fees)</td>
-          <td>✅ Tenants submit freely. Owners notified instantly.</td>
-          <td>❌ Often billed per work order or call</td>
-          <td>❌ Charged per service request or denied</td>
-        </tr>
-        <tr>
-      </tbody>
-    </table>
+  <!-- SMART PICKS -->
+  <div class="feature-panel" id="picks">
+    <div class="feature-card">
+
+      <div class="feature-text">
+        <h3>Personalized smart stock picks</h3>
+
+        <p class="feature-intro">
+        Explore stock ideas personalized to your budget and learning goals.
+        AMSON’s smart picks help you understand what’s possible at different
+        investment levels — without overwhelming you with unnecessary complexity.
+      </p>
+
+      <ul class="feature-points">
+        <li>Recommendations tailored to how much you want to invest</li>
+        <li>Clear risk indicators and confidence ratings</li>
+        <li>Discover opportunities across different price ranges</li>
+        <li>Focused on exploration and understanding, not pressure</li>
+      </ul>
+
+      </div>
+
+      <div class="feature-screen">
+        <img src="picks.png" alt="Smart picks screen" />
+      </div>
+
+    </div>
   </div>
+
+  <!-- WATCHLIST -->
+  <div class="feature-panel" id="watchlist">
+    <div class="feature-card">
+
+      <div class="feature-text">
+        <h3>Track stocks that matter to you</h3>
+
+        <p class="feature-intro">
+        Keep track of the stocks you care about in one organized place.
+        Your watchlist helps you monitor price changes, signals, and
+        sentiment without constantly searching the market.
+      </p>
+
+      <ul class="feature-points">
+        <li>Quick access to stocks you’re actively watching</li>
+        <li>Stay informed on price movements and signal changes</li>
+        <li>Monitor trends over time without placing trades</li>
+        <li>Designed to support thoughtful, patient investing</li>
+      </ul>
+
+      </div>
+
+      <div class="feature-screen">
+        <img src="watchlist.png" alt="Watchlist screen" />
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
-  <section id="why-us" class="why-us">
-    <h2>Why Choose AM&Son?</h2>
-    <div class="why-us-grid">
-      <div class="why-card"><p><strong>No Lease Management</strong><br>Only what matters most: repairs and support</p></div>
-      <div class="why-card"><p><strong>Transparent Pricing</strong><br>Flat monthly fees with no hidden charges</p></div>
-      <div class="why-card"><p><strong>AI-Powered Insights</strong><br>Smart tools to help investors grow</p></div>
-      <div class="why-card"><p><strong>Trusted Vendor Network</strong><br>Licensed service pros across Georgia</p></div>
-      <div class="why-card"><p><strong>Emergency Support</strong><br>We handle the urgent stuff so you don’t have to</p></div>
-      <div class="why-card"><p><strong>Custom Monthly Reports</strong><br>Know exactly how your property is performing</p></div>
-      <div class="why-card"><p><strong>Local Georgia Expertise</strong><br>We know the neighborhoods, laws, and markets</p></div>
-      <div class="why-card"><p><strong>Free Property Evaluation</strong><br>We assess your unit before onboarding, 100% free</p></div>
-    </div>
-  </section>
 
-  <section id="faq" class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item">
-    <h3>What does the $99/month service include?</h3>
-    <p>It covers tenant maintenance handling, service dispatch, emergency support, and monthly reporting.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Do you manage lease agreements?</h3>
-    <p>No, we focus solely on maintenance and support, so you can handle leasing the way you prefer.</p>
-  </div>
-  <div class="faq-item">
-  <h3>How quickly do you respond to maintenance requests?</h3>
-  <p>We dispatch service providers within 24 hours for standard issues and immediately for emergencies.</p>
-</div>
-<div class="faq-item">
-  <h3>Do I need to be in Georgia to use your services?</h3>
-  <p>No. As long as the property is located in Georgia, we manage the maintenance requests for you!</p>
-</div>
-<div class="faq-item">
-  <h3>Can I cancel my service anytime?</h3>
-  <p>Yes, our service is month-to-month with no long-term contracts. You can cancel anytime with no penalty.</p>
-</div>
-</section>
+<section class="faq" id="faq">
+  <div class="faq-inner">
 
-  <section id="clients" class="card-section">
-  <h2>Our Clients</h2>
-  <div class="clients-grid">
-    <div class="client-card">
-      <img src="content/client1.png" alt="2450 Brianna Drive" />
-      <h3>2450 Brianna Dr</h3>
-      <p>Hampton, GA 30228</p>
-      <p>3 Beds · 3 Baths</p>
+    <div class="faq-header">
+      <h2 class="faq-title">
+        Frequently Asked<br />
+        <span class="highlight highlight-block">Questions</span>
+      </h2>
+      <p class="faq-subtitle">
+        Everything you need to know before getting started with AMSON.
+      </p>
     </div>
-    <div class="client-card">
-      <img src="content/client2.png" alt="11209 Lenox Drive" />
-      <h3>11209 Lenox Dr</h3>
-      <p>Hampton, GA 30228</p>
-      <p>3 Bed · 2 Baths</p>
-    </div>
-  </div>
-</section>
 
-<section id="onboarding" class="onboarding-section">
-  <h2>How to Get Started</h2>
-  <div class="onboarding-steps">
-    <div class="step-card">
-      <h3>Step 1</h3>
-      <p>Book a free session to evaluate the property and for us to explain how AM&Son works.</p>
-    </div>
-    <div class="step-card">
-      <h3>Step 2</h3>
-      <p>We send over an agreement contract for your review and signature.</p>
-    </div>
-    <div class="step-card">
-      <h3>Step 3</h3>
-      <p>We send the owner a property onboarding form, and the tenant receives a maintenance request form.</p>
-    </div>
-    <div class="step-card">
-      <h3>Step 4</h3>
-      <p>Sit back! You’ll get notified by email every time your tenant submits a request.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <h3>Is this financial advice?</h3>
+        <p>
+          No. AMSON does not provide financial or investment advice. All tools,
+            signals, and insights are for educational and informational purposes only.
+            Every user makes their own decisions and trades at their own risk.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is this real money?</h3>
+        <p>
+          No. AMSON uses virtual capital only. You can practice investing
+          without risking real money.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>When will AMSON launch?</h3>
+        <p>
+          We’re planning a phased launch. Early access users and challenge
+          participants will be notified first.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Who can join the challenge?</h3>
+        <p>
+          The challenge is open to students, beginners, and anyone curious
+          about investing. Spots are limited.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is AMSON free?</h3>
+        <p>
+          No, AMSON is free only for the first 7 days, after that its 9.99$ a month, cancel anytime!
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
 
+<section class="safety" id="safety">
+  <div class="safety-inner">
+    <span class="safety-badge">Transparency & Safety</span>
 
+    <h2 class="safety-title">
+      Built for learning — not financial risk
+    </h2>
 
-  <section id="contact">
-  <h2>Get In Touch</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.5rem;">
-    <div style="background: #ffffff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); flex: 1 1 300px;">
-      <p><strong>📧 Email:</strong> support@amandson.com</p>
-    </div>
-    <div style="background: #ffffff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); flex: 1 1 300px;">
-      <p><strong>📍 Serving:</strong> Georgia</p>
-    </div>
-    <div style="background: #ffffff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); flex: 1 1 300px;">
-        <p><strong>📅 Schedule:</strong> <a href="https://calendly.com/amandson-support" style="text-decoration: none; color: #003366;">Book a Free Consultation</a></p>
-    </div>
+    <p class="safety-text">
+      AMSON is a paper trading and educational platform designed to help users
+      learn how markets work in a safe environment.
+    </p>
+
+    <p class="safety-text">
+      The app does <strong>not</strong> provide financial advice and does
+      <strong>not</strong> involve real money trading. All simulations,
+      signals, and insights are for educational purposes only.
+    </p>
   </div>
 </section>
 
-  <footer>
-    &copy; 2025 AM&Son. All rights reserved.
-  </footer>
-  <script src="script.js"></script>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-signup">
+      <h4>Stay in the loop</h4>
+      <p>Early access updates, launch news, and feature announcements.</p>
+
+      <!-- ✅ SILENT GOOGLE FORM SUBMIT -->
+      <form
+        action="https://docs.google.com/forms/d/e/1FAIpQLSd4vCFX3BtyMQO4KyUwSdjQnSx1VNcvnpUKj_Q_iNmE4ojL_w/formResponse"
+        method="POST"
+        target="hidden_iframe"
+        class="signup-form"
+        onsubmit="submitted=true;"
+      >
+        <input
+          type="email"
+          name="emailAddress"
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit">Notify me</button>
+      </form>
+
+      <!-- SUCCESS MESSAGE -->
+      <p id="successMessage" style="display:none; margin-top:16px;">
+        ✅ Thanks! You’re on the list. We’ll notify you soon 🚀
+      </p>
+
+      <span class="signup-note">
+        No spam. Educational updates only.
+      </span>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p>
+        © 2025 AMSON. All rights reserved.
+        <span class="footer-separator">•</span>
+        <a href="terms.html" class="footer-link">Terms & Conditions</a>
+      </p>
+      <p class="footer-disclaimer">
+        AMSON is a paper trading and educational platform. No financial advice.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ================= HIDDEN IFRAME ================= -->
+<iframe
+  name="hidden_iframe"
+  style="display:none;"
+  onload="formSubmitted()"
+></iframe>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="script.js"></script>
+
+<script>
+  let submitted = false;
+
+  function formSubmitted() {
+    if (!submitted) return;
+
+    document.querySelector(".signup-form").style.display = "none";
+    document.getElementById("successMessage").style.display = "block";
+  }
+</script>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
 
