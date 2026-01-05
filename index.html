@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AMSON — Invest Today</title>
+  <title>AMSON — Smart Investing</title>
   <link rel="icon" type="image/png" href="logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
@@ -19,20 +19,38 @@
   <button class="promo-close" id="promoClose">✕</button>
 </div>
 
-<!-- NAV -->
 <nav class="nav">
+  <!-- LEFT: LOGO -->
   <div class="logo">
-  <img src="logo.png" href="index.html" alt="AMSON logo" />
+    <img src="logo.png" alt="AMSON logo" />
   </div>
 
-<ul class="nav-links">
-  <li><a href="#wwws">WWW's</a></li>
-  <li><a href="#how-it-works">How it Works?</a></li>
-  <li><a href="#faq">FAQ</a></li>
-  <li><a href="#safety">Safety</a></li>
-</ul>
+  <!-- HAMBURGER (MOBILE) -->
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
+  <!-- RIGHT: NAV LINKS -->
+  <ul class="nav-links">
+    <li><a href="#wwws">WWW’s</a></li>
+    <li><a href="#how-it-works">How it Works?</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#safety">Safety</a></li>
+  </ul>
 </nav>
+
+<script>
+  const hamburger = document.getElementById("hamburgerBtn");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+
 
 <!-- HERO -->
 <section class="hero">
@@ -40,8 +58,7 @@
 
     <!-- PHONE LEFT -->
     <div class="phone-wrapper">
-      <div class="glow"></div>
-      <img src="photo2.png" alt="AMSON App" class="phone-img" />
+      <img src="photo2.png" class="phone-img" />
     </div>
 
     <!-- TEXT RIGHT -->
