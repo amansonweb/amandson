@@ -18,6 +18,18 @@ html, body {
   height: auto;
 }
 
+/* REMOVE UNDERLINE FROM BUTTONS / LINKS */
+.nav-btn,
+.nav-btn a {
+  text-decoration: none !important;
+}
+
+.nav-btn:hover,
+.nav-btn a:hover {
+  text-decoration: none !important;
+}
+
+
 /* ================= HOW IT WORKS (FIXED) ================= */
 
 .how-it-works {
@@ -225,7 +237,7 @@ body.has-banner .nav {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 120px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* Typing */
@@ -245,14 +257,14 @@ body.has-banner .nav {
 
 /* Phone */
 .phone-wrapper {
-  position: relative;
+  position: sticky;
+  will-change: transform;
+  transform: translateY(-40px);
   width: 320px;
 }
 
 .phone-img {
-  width: 100%;
-  border-radius: 38px;
-  filter: drop-shadow(0 24px 64px rgba(37, 99, 235, 0.22));
+    width: 280px; /* 👈 makes phone smaller */
 }
 
 .glow {
@@ -996,10 +1008,6 @@ body.has-banner .nav {
     overflow: hidden;
   }
 
-  .glow {
-    display: none; /* glow causes horizontal overflow */
-  }
-
   /* -------- ABOUT CARDS -------- */
   .about {
     padding: 80px 0;
@@ -1175,4 +1183,85 @@ body {
 
 @keyframes fadeIn {
   to { opacity: 1; }
+}
+
+/* ================= MOBILE PHONE SIZE FIX ================= */
+@media (max-width: 768px) {
+
+  .phone-wrapper {
+    width: 200px;          /* 🔽 smaller phone */
+    margin: 0 auto;
+  }
+
+  .phone-img {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+/* ================= MOBILE STORE BUTTON ALIGNMENT ================= */
+@media (max-width: 768px) {
+
+  .store-buttons {
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;           /* allows clean stacking if needed */
+  }
+
+  .store-btn {
+    min-width: 160px;          /* keeps buttons balanced */
+    text-align: center;
+  }
+
+}
+
+/* ================= HAMBURGER MENU ================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2.5px;
+  background: #0b1d39;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex; /* 👈 SHOW icon */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+
+    background: white;
+    border-radius: 16px;
+    padding: 16px 20px;
+
+    flex-direction: column;
+    gap: 16px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+
+    display: none; /* hidden by default */
+  }
+
+  .nav-links.active {
+    display: flex; /* 👈 SHOW when toggled */
+  }
 }
