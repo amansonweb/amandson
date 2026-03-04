@@ -189,6 +189,19 @@ html, body {
   transition: top 0.3s ease;
 }
 
+.nav-download {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #0b1d39;
+  color: white !important;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
+.nav-download:hover {
+  background: #2563eb;
+}
+
 body.has-banner .nav {
   top: 56px;
 }
@@ -223,11 +236,22 @@ body.has-banner .nav {
 
 /* ================= HERO ================= */
 .hero {
-  padding-top: calc(160px + 56px); /* nav + banner */
-  padding-bottom: 120px;
-  display: flex;
-  align-items: center;
+  padding-top: calc(160px + 56px);
+  padding-bottom: 10px; /* reduced space */
+  text-align: center;
 }
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-text {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+}
+
 
 .hero-grid {
   max-width: 1400px;
@@ -281,24 +305,89 @@ body.has-banner .nav {
 }
 
 .headline {
-  font-size: clamp(64px, 7vw, 124px);
+  font-size: clamp(48px, 6vw, 90px); /* smaller */
   font-weight: 800;
-  line-height: 0.95;
+  line-height: 1;
+  white-space: nowrap; /* keeps Imagine investing on one line */
 }
 
 .subtitle {
-  margin-top: 24px;
-  max-width: 520px;
+  margin: 24px auto 0;
+  max-width: 600px;
   font-size: 18px;
-  line-height: 1.6;
   color: rgba(11, 29, 57, 0.7);
+}
+
+.phones {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: -40px auto 0;
+  height: 420px; /* smaller height removes gap */
+}
+
+.phone {
+  position: absolute;
+  width: 260px;
+  transition: transform 0.4s ease;
+}
+
+/* CENTER PHONE */
+
+.phone-center {
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* LEFT PHONE */
+
+.phone-left {
+  left: 10%;
+  transform: rotate(-10deg);
+  z-index: 2;
+}
+
+/* RIGHT PHONE */
+
+.phone-right {
+  right: 10%;
+  transform: rotate(10deg);
+  z-index: 2;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .headline {
+    font-size: clamp(40px, 10vw, 56px);
+  }
+
+  .phones {
+    height: 380px;
+  }
+
+  .phone {
+    width: 160px;
+  }
+
+  .phone-left {
+    left: 0%;
+  }
+
+  .phone-right {
+    right: 0%;
+  }
+
 }
 
 /* Buttons */
 .store-buttons {
   margin-top: 36px;
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .store-btn {
