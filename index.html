@@ -2,422 +2,467 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AMSON — Smart Investing</title>
-  <link rel="icon" type="image/png" href="logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== PRIMARY SEO ===== -->
+  <title>AMSON — Stock Trading Signals App | BUY, SELL & WAIT Alerts</title>
+  <meta name="description" content="AMSON gives you instant stock trading signals — BUY, SELL, or WAIT — for any ticker. Get automatic alerts on the top 30 highest market cap stocks. Free for 30 days. Available on iOS." />
+  <meta name="keywords" content="stock signals, trading signals app, stock market app, buy sell signals, stock alerts, trading app iOS, stock analysis app, market signals, stock signal notifications, swing trading signals, day trading signals, stock screener app, NVDA signal, AAPL signal, stock trend analysis, when to buy stocks, when to sell stocks, stock market alerts, real-time stock signals, best trading app, stock momentum indicator, technical analysis app, stock market notifications, free stock signals, top stocks to buy, stock market tracker, investment signals app, stock chart analysis, market trend signals, iOS trading app" />
+  <meta name="author" content="AMSON" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://amson.app/" />
+
+  <!-- ===== OPEN GRAPH (Facebook, LinkedIn previews) ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://amson.app/" />
+  <meta property="og:title" content="AMSON — Stock Trading Signals | BUY, SELL & WAIT Alerts" />
+  <meta property="og:description" content="Search any stock ticker and get an instant signal. AMSON automatically monitors the top 30 market cap stocks and alerts you when signals change. Free 30-day trial." />
+  <meta property="og:image" content="https://amson.app/og-image.png" />
+  <meta property="og:site_name" content="AMSON" />
+
+  <!-- ===== TWITTER CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AMSON — Stock Trading Signals App" />
+  <meta name="twitter:description" content="Get BUY, SELL, or WAIT signals on any stock instantly. Auto-alerts on the top 30 highest market cap stocks. Download free on iOS." />
+  <meta name="twitter:image" content="https://amson.app/og-image.png" />
+
+  <!-- ===== APP STORE / MOBILE ===== -->
+  <meta name="apple-itunes-app" content="app-id=6759684228" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#0b1d39" />
+
+  <!-- ===== STRUCTURED DATA (Google Rich Results) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "AMSON — Trading Signals",
+    "description": "Search any stock ticker and instantly get a BUY, SELL, or WAIT signal. AMSON analyzes trend direction, entry timing, and market momentum. Auto-alerts on the top 30 highest market cap stocks.",
+    "operatingSystem": "iOS",
+    "applicationCategory": "FinanceApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free for 30 days, then $9.99/month"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "1"
+    },
+    "url": "https://apps.apple.com/us/app/amson-trading-signals/id6759684228",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AMSON",
+      "url": "https://amson.app"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- COMPETITION BANNER -->
-<div class="promo-banner" id="promoBanner">
-  <span class="promo-text">
-    🏆 <strong>Available Now</strong> — Download on App Store
-    30 days <strong>free!</strong>
-  </span>
-
-  <button class="promo-close" id="promoClose">✕</button>
+<!-- ========== BANNER ========== -->
+<div class="banner" id="banner">
+  <p>🏆 <strong>Available Now</strong> on the App Store — first 30 days free</p>
+  <button class="banner-close" id="bannerClose">✕</button>
 </div>
 
-<nav class="nav">
-  <!-- LEFT: LOGO -->
-  <div class="logo">
-    <img src="logo.png" alt="AMSON logo" />
-  </div>
-
-  <!-- HAMBURGER (MOBILE) -->
-  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
-    <span></span>
-    <span></span>
-    <span></span>
+<!-- ========== NAV ========== -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="AMSON" />
+  </a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#signals">Signals</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#safety">Safety</a></li>
+  </ul>
+  <a href="https://apps.apple.com/us/app/amson-trading-signals/id6759684228" target="_blank" class="nav-download">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    Download
+  </a>
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
   </button>
-
-  <!-- RIGHT: NAV LINKS -->
-<ul class="nav-links">
-  <li><a href="#wwws">WWW’s</a></li>
-  <li><a href="#how-it-works">How it Works?</a></li>
-  <li><a href="#faq">FAQ</a></li>
-  <li><a href="#safety">Safety</a></li>
-  <li>
-    <a href="#" class="nav-download"> Download</a>
-  </li>
-</ul>
 </nav>
 
-<script>
-  const hamburger = document.getElementById("hamburgerBtn");
-  const navLinks = document.querySelector(".nav-links");
-
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-</script>
-
-
-
-<!-- HERO -->
-<!-- HERO -->
+<!-- ========== HERO ========== -->
 <section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-grid"></div>
 
-  <div class="hero-container">
+  <div class="hero-layout">
 
-    <!-- TITLE -->
-    <div class="hero-text">
-      <h1 class="headline">
-        Imagine investing…<br>
-        <span id="typed-text"></span>
+    <!-- LEFT: Text -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="pulse-dot"></span>
+        Search Any Stock · Auto-Alerts on Top 30
+      </div>
+
+      <h1 class="hero-title">
+        Search<br>any stock.<br>
+        <em>Get a signal<br>instantly.</em>
       </h1>
 
-      <p class="subtitle">
-        Stock analysis, smart recommendations, and portfolio diversification — all in one app.
+      <p class="hero-body">
+        Type any ticker and get a clear signal in seconds. AMSON automatically watches the top 30 highest market cap stocks and alerts you when things change — the safest picks, monitored 24/7.
       </p>
 
-     
+      <div class="hero-cta">
+        <a href="https://apps.apple.com/us/app/amson-trading-signals/id6759684228" target="_blank" class="cta-pill">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download on App Store
+        </a>
+        <a href="#how" class="cta-link">See how it works →</a>
+      </div>
     </div>
 
-    <!-- PHONES -->
-    <div class="phones">
+    <!-- RIGHT: Interactive Signal Demo -->
+    <div class="hero-right">
+      <div class="demo-card">
 
-      <img src="phone2.png" class="phone phone-left">
-      <img src="phone1.png" class="phone phone-center">
-      <img src="phone3.png" class="phone phone-right">
+        <div class="demo-header">
+          <span class="demo-label">TRY IT — PICK A STOCK</span>
+          <span class="demo-live"><span class="live-dot"></span>LIVE</span>
+        </div>
 
+        <div class="demo-chips" id="demoChips">
+          <button class="demo-chip active" data-ticker="AAPL"  data-signal="BUY"  data-price="$212.49" data-trend="Uptrend" data-timing="Good entry" data-momentum="Buyers">AAPL</button>
+          <button class="demo-chip"        data-ticker="NVDA"  data-signal="SELL" data-price="$167.52" data-trend="Downtrend" data-timing="Not yet" data-momentum="Sellers">NVDA</button>
+          <button class="demo-chip"        data-ticker="TSLA"  data-signal="WAIT" data-price="$248.10" data-trend="Sideways" data-timing="Unclear" data-momentum="Neutral">TSLA</button>
+          <button class="demo-chip"        data-ticker="MSFT"  data-signal="BUY"  data-price="$415.32" data-trend="Uptrend" data-timing="Good entry" data-momentum="Buyers">MSFT</button>
+          <button class="demo-chip"        data-ticker="AMZN"  data-signal="BUY"  data-price="$198.76" data-trend="Uptrend" data-timing="Good entry" data-momentum="Buyers">AMZN</button>
+          <button class="demo-chip"        data-ticker="META"  data-signal="SELL" data-price="$548.30" data-trend="Downtrend" data-timing="Not yet" data-momentum="Sellers">META</button>
+          <button class="demo-chip"        data-ticker="GOOG"  data-signal="WAIT" data-price="$172.88" data-trend="Sideways" data-timing="Unclear" data-momentum="Neutral">GOOG</button>
+          <button class="demo-chip"        data-ticker="PLTR"  data-signal="BUY"  data-price="$89.44" data-trend="Uptrend" data-timing="Good entry" data-momentum="Buyers">PLTR</button>
+        </div>
+
+        <div class="demo-result" id="demoResult">
+          <!-- Signal Box -->
+          <div class="demo-signal-box" id="demoSignalBox">
+            <div class="dsb-ticker" id="dsbTicker">AAPL</div>
+            <div class="dsb-signal" id="dsbSignal">BUY</div>
+            <div class="dsb-price" id="dsbPrice">$212.49</div>
+          </div>
+
+          <!-- Breakdown -->
+          <div class="demo-breakdown">
+            <div class="dbd-row">
+              <span class="dbd-label">Long-term trend</span>
+              <span class="dbd-val" id="dbdTrend">Uptrend</span>
+            </div>
+            <div class="dbd-row">
+              <span class="dbd-label">Entry timing</span>
+              <span class="dbd-val" id="dbdTiming">Good entry</span>
+            </div>
+            <div class="dbd-row">
+              <span class="dbd-label">Momentum</span>
+              <span class="dbd-val" id="dbdMomentum">Buyers in control</span>
+            </div>
+          </div>
+
+          <!-- Candle chart animation -->
+          <div class="demo-candles" id="demoCandles">
+            <div class="dc" style="--h:38%"></div>
+            <div class="dc" style="--h:52%"></div>
+            <div class="dc" style="--h:44%"></div>
+            <div class="dc" style="--h:61%"></div>
+            <div class="dc" style="--h:55%"></div>
+            <div class="dc" style="--h:72%"></div>
+            <div class="dc" style="--h:68%"></div>
+            <div class="dc" style="--h:80%"></div>
+          </div>
+
+          <p class="demo-disclaimer">Not financial advice. For educational purposes only.</p>
+        </div>
+
+      </div>
     </div>
 
+  </div>
+
+  <!-- Ticker ribbon — full width, inside hero, contained -->
+  <div class="ticker-ribbon">
+    <div class="ticker-ribbon-inner">
+      <span class="ticker-ribbon-label">LIVE SIGNALS</span>
+      <div class="ticker-ribbon-track-wrap">
+        <div class="ticker-track" id="tickerTrack"></div>
+      </div>
+      <span class="ticker-ribbon-live"><span class="live-dot"></span>LIVE</span>
+    </div>
   </div>
 
 </section>
 
-<!-- WHAT / WHY AMSON -->
-<section class="about" id="wwws">
-  <div class="about-inner">
+<!-- ========== SIGNAL CARDS ========== -->
+<section class="signals-section" id="signals">
+  <div class="container">
+    <p class="section-eyebrow">WHAT AMSON DELIVERS</p>
+    <h2 class="section-heading">One search.<br>One answer.</h2>
+    <p class="section-sub">Every stock you analyze gets one of three clear verdicts — no charts to decode, no jargon to learn.</p>
 
-    <!-- SECTION HEADER -->
-    <div class="about-header">
-      <h2 class="about-heading">
-  A <span class="highlight">Smarter</span> way to learn investing
-    </h2>
-      <p class="about-subheading">
-        Built for clarity, confidence, and risk-free exploration.
-      </p>
+    <div class="signal-trio">
+      <div class="sig-card sig-buy">
+        <div class="sig-verdict">BUY</div>
+        <div class="sig-meter"><div class="sig-fill" style="width:82%"></div></div>
+        <p>Trend is up, timing is right, buyers are in control. Conditions favor entering the position.</p>
+      </div>
+      <div class="sig-card sig-wait">
+        <div class="sig-verdict">WAIT</div>
+        <div class="sig-meter"><div class="sig-fill" style="width:50%"></div></div>
+        <p>The signal isn't clear yet. Better to hold off and wait for a stronger setup before acting.</p>
+      </div>
+      <div class="sig-card sig-sell">
+        <div class="sig-verdict">SELL</div>
+        <div class="sig-meter"><div class="sig-fill" style="width:25%"></div></div>
+        <p>Downtrend confirmed, sellers dominating. Consider exiting or avoiding this stock for now.</p>
+      </div>
     </div>
-
- <div class="about-cards">
-
-  <!-- WHAT -->
-  <div class="about-card">
-    <span class="card-label">WHAT AMSON IS</span>
-    <h3 class="card-title">Practice investing without real risk</h3>
-    <p class="card-text">
-      AMSON is a smart investing app that lets you explore the stock market,
-      analyze opportunities, and practice trading strategies using virtual
-      capital — not real money.
-    </p>
   </div>
+</section>
 
-  <!-- WHY -->
-  <div class="about-card accent">
-    <span class="card-label">WHY USE AMSON</span>
-    <h3 class="card-title">Confidence before real decisions</h3>
-    <p class="card-text">
-      Investing can feel complex and overwhelming. AMSON gives you a structured,
-      risk-free environment to learn, experiment, and develop confidence
-      before putting real money on the line.
-    </p>
+<!-- ========== FEATURES ========== -->
+<section class="features-section" id="how">
+  <div class="container">
+
+    <p class="section-eyebrow">HOW IT WORKS</p>
+    <h2 class="section-heading">Three steps.<br>Total clarity.</h2>
+
+    <div class="feat-list">
+
+      <div class="feat-row">
+        <div class="feat-num-col">
+          <span class="feat-num">01</span>
+        </div>
+        <div class="feat-body">
+          <h3>Search a ticker</h3>
+          <p>Type any US stock symbol or pick from the quick-picks list of the top 30 most-traded stocks. AMSON handles everything from there.</p>
+          <div class="chip-row">
+            <span class="chip">AAPL</span><span class="chip">NVDA</span><span class="chip">TSLA</span><span class="chip">MSFT</span><span class="chip">AMZN</span><span class="chip">META</span><span class="chip">PLTR</span><span class="chip">GOOG</span>
+          </div>
+        </div>
+        <div class="feat-visual">
+          <div class="mock-card">
+            <div class="mc-label">Enter Stock Symbol</div>
+            <div class="mc-input" id="mcTyping">NVDA<span class="blink-cursor">|</span></div>
+            <div class="mc-btn">⌘ Analyze</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-rule"></div>
+
+      <div class="feat-row feat-flip">
+        <div class="feat-num-col">
+          <span class="feat-num">02</span>
+        </div>
+        <div class="feat-body">
+          <h3>Get your signal</h3>
+          <p>AMSON analyzes trend direction, entry timing, and buyer/seller momentum — and delivers a verdict with a clear explanation of why.</p>
+        </div>
+        <div class="feat-visual">
+          <div class="mock-card">
+            <div class="mc-signal-tag">SIGNAL · NVDA</div>
+            <div class="mc-signal-val mc-sell">SELL</div>
+            <div class="mc-signal-price">$167.52</div>
+            <div class="mc-pills">
+              <span class="mc-pill r">↓ Downtrend</span>
+              <span class="mc-pill a">⏱ Not yet</span>
+              <span class="mc-pill r">Sellers in control</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-rule"></div>
+
+      <div class="feat-row">
+        <div class="feat-num-col">
+          <span class="feat-num">03</span>
+        </div>
+        <div class="feat-body">
+          <h3>Auto-alerts on the top 30</h3>
+          <p>You don't have to do anything. AMSON automatically monitors the <strong>30 highest market cap stocks</strong> — AAPL, NVDA, MSFT, and more — and pushes you a notification the moment their signal changes. These are the market's most established companies, chosen because they carry the least risk and the most reliable signals.</p>
+          <div class="top30-note">
+            <span class="top30-icon">🛡️</span>
+            <span>Highest market cap = most stable = safer signals</span>
+          </div>
+        </div>
+        <div class="feat-visual">
+          <div class="mock-card mock-notif-card">
+            <div class="mn-header">AUTO-ALERTS · TOP 30</div>
+            <div class="mn-row">
+              <div class="mn-dot green"></div>
+              <div class="mn-text"><strong>AAPL — BUY</strong><span>Crossed above trend</span></div>
+            </div>
+            <div class="mn-row">
+              <div class="mn-dot red"></div>
+              <div class="mn-text"><strong>NVDA — SELL</strong><span>Sellers in control</span></div>
+            </div>
+            <div class="mn-row">
+              <div class="mn-dot amber"></div>
+              <div class="mn-text"><strong>TSLA — WAIT</strong><span>Hold for better entry</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
+</section>
 
-  <!-- WHO -->
-  <div class="about-card subtle">
-    <span class="card-label">WHO IT’S BUILT FOR</span>
-    <h3 class="card-title">Anyone learning the market</h3>
-    <p class="card-text">
-      AMSON is built for beginners, students, and curious thinkers who want to
-      understand investing, test ideas, and develop strategies without the
-      pressure of real financial risk.
-    </p>
+<!-- ========== WHY TOP 30 ========== -->
+<section class="why30-section">
+  <div class="container">
+    <div class="why30-grid">
+      <div class="why30-left">
+        <p class="section-eyebrow">WHY TOP 30?</p>
+        <h2 class="why30-heading">The safest stocks<br>in the market.<br><em>Watched for you.</em></h2>
+      </div>
+      <div class="why30-right">
+        <p class="why30-lead">AMSON automatically sends you signal alerts for the 30 companies with the highest market cap — no setup required, no watchlist needed.</p>
+        <div class="why30-reasons">
+          <div class="why30-reason">
+            <div class="why30-icon">📊</div>
+            <div>
+              <strong>Highest market cap</strong>
+              <p>The biggest companies in the world — AAPL, MSFT, NVDA, AMZN, META and more. Trillions in value, not penny stocks.</p>
+            </div>
+          </div>
+          <div class="why30-reason">
+            <div class="why30-icon">🛡️</div>
+            <div>
+              <strong>Least chance to lose</strong>
+              <p>Large-cap stocks are far more stable than small or mid-caps. They're harder to manipulate, more liquid, and recover faster from downturns.</p>
+            </div>
+          </div>
+          <div class="why30-reason">
+            <div class="why30-icon">🔔</div>
+            <div>
+              <strong>Always-on alerts</strong>
+              <p>You don't have to search or check. AMSON watches all 30 around the clock and pushes you a notification the moment a signal changes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
+<!-- ========== MARQUEE ========== -->
+<div class="marquee-wrap">
+  <div class="marquee-label-left">TOP 30 COVERED</div>
+  <div class="marquee-overflow">
+    <div class="marquee-row" id="marqueeRow">
+      <span>AAPL</span><span>NVDA</span><span>MSFT</span><span>TSLA</span><span>AMZN</span>
+      <span>META</span><span>GOOG</span><span>PLTR</span><span>NFLX</span><span>AMD</span>
+      <span>BABA</span><span>INTC</span><span>DIS</span><span>JPM</span><span>BAC</span>
+      <span>V</span><span>MA</span><span>WMT</span><span>KO</span><span>PEP</span>
+      <span>JNJ</span><span>PFE</span><span>UNH</span><span>XOM</span><span>CVX</span>
+      <span>GE</span><span>BA</span><span>CAT</span><span>GS</span><span>MS</span>
+      <span>AAPL</span><span>NVDA</span><span>MSFT</span><span>TSLA</span><span>AMZN</span>
+      <span>META</span><span>GOOG</span><span>PLTR</span><span>NFLX</span><span>AMD</span>
+    </div>
+  </div>
 </div>
 
+<!-- ========== FAQ ========== -->
+<section class="faq-section" id="faq">
+  <div class="container faq-inner">
+
+    <div class="faq-left">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="faq-heading">Questions?</h2>
+      <p class="faq-sub">Everything you need to know before downloading.</p>
+    </div>
+
+    <div class="faq-right">
+      <div class="faq-item">
+        <button class="faq-q">Is this financial advice?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No. AMSON does not provide financial or investment advice. All signals are educational and informational only. You make your own decisions.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What stocks does AMSON cover?<span class="faq-icon">+</span></button>
+        <div class="faq-a">AMSON covers the top 30 most-traded US stocks including AAPL, NVDA, TSLA, MSFT, AMZN, META, GOOG, PLTR and more. You can also search any other US ticker directly.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do notifications work?<span class="faq-icon">+</span></button>
+        <div class="faq-a">AMSON automatically monitors the top 30 highest market cap stocks — regardless of what's in your watchlist — and sends you a push notification whenever any of their signals change. These 30 companies are chosen because they're the most stable and established in the market, giving you the most reliable alerts with the least risk.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's the difference between Search and Notifications?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Search lets you analyze any US stock on demand — type a ticker and instantly get a BUY, SELL, or WAIT signal. Notifications are automatic and only cover the top 30 market cap stocks. You save stocks to your watchlist to keep them organized, but notifications come from the top 30 regardless of your watchlist.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is AMSON free?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Your first 30 days are completely free. After that it's $9.99/month. Cancel anytime with no questions asked.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does this involve real money?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No. AMSON is a signal and insight platform only. We don't execute trades or handle real money in any way.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Where is AMSON available?<span class="faq-icon">+</span></button>
+        <div class="faq-a">AMSON is available now on the Apple App Store for iPhone. Download today and your first 30 days are free.</div>
+      </div>
+    </div>
 
   </div>
 </section>
 
-<section class="how-it-works" id="how-it-works">
-
-  <!-- SECTION HEADER -->
-  <div class="section-header">
-    <h2 class="section-title">
-      How <span class="highlight">AMSON</span> works
-    </h2>
-    <p class="section-subtitle">
-      Learn, practice, and build confidence using real market data — without real risk.
-    </p>
-  </div>
-
-  <!-- FEATURE NAV -->
-  <div class="feature-nav">
-    <button class="feature-tab active" data-tab="paper">Paper Trading</button>
-    <button class="feature-tab" data-tab="signals">Signals & Sentiment</button>
-    <button class="feature-tab" data-tab="watchlist">Watchlist</button>
-  </div>
-
-  <!-- FEATURES -->
-
-  <!-- PAPER TRADING -->
-  <div class="feature-panel active" id="paper">
-    <div class="feature-card">
-
-      <div class="feature-text">
-        <h3>Practice with virtual capital</h3>
-
-        <p class="feature-intro">
-         Practice real-world investing using virtual capital and live market data. 
-         AMSON’s paper trading account lets you simulate trades, monitor your buying 
-         power, and track portfolio performance — without risking real money.
-      </p>
-
-      <ul class="feature-points">
-        <li>View your buying power and invested capital in real time</li>
-        <li>Simulate buying and selling stocks just like a real brokerage account</li>
-        <li>Track portfolio diversification and performance</li>
-        <li>Monitor individual positions and allocation percentages</li>
-        <li>Practice strategies and build confidence before trading real money</li>
-      </ul>
-
-      </div>
-
-      <div class="feature-screen">
-        <img src="phone3.png" alt="Paper trading screen" />
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SIGNALS -->
-  <div class="feature-panel" id="signals">
-    <div class="feature-card">
-
-      <div class="feature-text">
-        <h3>Signals powered by community insight</h3>
-
-        <p class="feature-intro">
-         Combine real market data with insights from the AMSON 
-         community to better understand how a stock may move. 
-         View price trends, monitor performance, and use signals 
-         to help guide your trading decisions.
-      </p>
-
-      <ul class="feature-points">
-        <li>View live stock prices and performance data</li>
-        <li>Analyze price charts and market trends</li>
-        <li>Buy or sell directly from the stock page</li>
-        <li>Track previous signals and stock history</li>
-        <li>Use community insights to support smarter decisions</li>
-      </ul>
-
-      </div>
-
-      <div class="feature-screen">
-        <img src="phone2.png" alt="Signals and sentiment screen" />
-      </div>
-
-    </div>
-  </div>
-
-  <!-- WATCHLIST -->
-  <div class="feature-panel" id="watchlist">
-    <div class="feature-card">
-
-      <div class="feature-text">
-        <h3>Track stocks that matter to you</h3>
-
-        <p class="feature-intro">
-        Save the stocks you want to follow and keep them organized 
-        in one place. Your AMSON watchlist lets you quickly access 
-        the companies you're tracking and view their latest market data.
-      </p>
-
-      <ul class="feature-points">
-        <li>Save stocks you want to monitor</li>
-        <li>Quickly access the companies you’re following</li>
-        <li>Tap any stock to view detailed market information</li>
-        <li>Stay updated on price changes and performance</li>
-        <li>Keep your favorite stocks organized in one place</li>
-      </ul>
-
-      </div>
-
-      <div class="feature-screen">
-        <img src="phone4.png" alt="Watchlist screen" />
-      </div>
-
-    </div>
-  </div>
-
-</section>
-
-
-<section class="faq" id="faq">
-  <div class="faq-inner">
-
-    <div class="faq-header">
-      <h2 class="faq-title">
-        Frequently Asked<br />
-        <span class="highlight highlight-block">Questions</span>
-      </h2>
-      <p class="faq-subtitle">
-        Everything you need to know before getting started with AMSON.
-      </p>
-    </div>
-
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <h3>Is this financial advice?</h3>
-        <p>
-          No. AMSON does not provide financial or investment advice. All tools,
-            signals, and insights are for educational and informational purposes only.
-            Every user makes their own decisions and trades at their own risk.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Is this real money?</h3>
-        <p>
-          No. AMSON uses virtual capital only. You can practice investing
-          without risking real money.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h3>When will AMSON launch?</h3>
-        <p>
-          We’re planning a phased launch. Early access users and challenge
-          participants will be notified first.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Is AMSON free?</h3>
-        <p>
-          No, AMSON is free only for the first 30 days, after that its 9.99$ a month, cancel anytime!
-        </p>
-      </div>
-
+<!-- ========== SAFETY ========== -->
+<section class="safety-section" id="safety">
+  <div class="container">
+    <div class="safety-card">
+      <div class="safety-badge">Transparency & Safety</div>
+      <h2>Built for insight.<br>Not financial risk.</h2>
+      <p>AMSON is a stock signal and educational platform. We analyze publicly available market data and surface it in a clear format. We do <strong>not</strong> provide financial advice, execute trades, or involve real money of any kind. All signals are informational and educational only.</p>
     </div>
   </div>
 </section>
 
-<section class="safety" id="safety">
-  <div class="safety-inner">
-    <span class="safety-badge">Transparency & Safety</span>
-
-    <h2 class="safety-title">
-      Built for learning — not financial risk
-    </h2>
-
-    <p class="safety-text">
-      AMSON is a paper trading and educational platform designed to help users
-      learn how markets work in a safe environment.
-    </p>
-
-    <p class="safety-text">
-      The app does <strong>not</strong> provide financial advice and does
-      <strong>not</strong> involve real money trading. All simulations,
-      signals, and insights are for educational purposes only.
-    </p>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
+<!-- ========== FOOTER ========== -->
 <footer class="footer">
-  <div class="footer-inner">
-
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <img src="logo.png" alt="AMSON" class="footer-logo" />
+      <p>Stock signals, instantly.</p>
+    </div>
     <div class="footer-signup">
       <h4>Stay in the loop</h4>
-      <p>Early access updates, launch news, and feature announcements.</p>
-
-      <!-- ✅ SILENT GOOGLE FORM SUBMIT -->
-      <form
-        action="https://docs.google.com/forms/d/e/1FAIpQLSd4vCFX3BtyMQO4KyUwSdjQnSx1VNcvnpUKj_Q_iNmE4ojL_w/formResponse"
-        method="POST"
-        target="hidden_iframe"
-        class="signup-form"
-        onsubmit="submitted=true;"
-      >
-        <input
-          type="email"
-          name="emailAddress"
-          placeholder="Enter your email"
-          required
-        />
+      <p>Launch updates, new features, and early access news.</p>
+      <form class="signup-row" action="https://docs.google.com/forms/d/e/1FAIpQLSd4vCFX3BtyMQO4KyUwSdjQnSx1VNcvnpUKj_Q_iNmE4ojL_w/formResponse" method="POST" target="hidden_iframe" onsubmit="formSent=true">
+        <input type="email" name="emailAddress" placeholder="your@email.com" required />
         <button type="submit">Notify me</button>
       </form>
-
-      <!-- SUCCESS MESSAGE -->
-      <p id="successMessage" style="display:none; margin-top:16px;">
-        ✅ Thanks! You’re on the list. We’ll notify you soon 🚀
-      </p>
-
-      <span class="signup-note">
-        No spam. Educational updates only.
-      </span>
+      <p id="formSuccess" style="display:none;color:rgba(255,255,255,0.55);font-size:13px;margin-top:10px;">✅ You're on the list!</p>
+      <span class="signup-note">No spam. Educational updates only.</span>
     </div>
-
-    <div class="footer-divider"></div>
-
-    <div class="footer-bottom">
-      <p>
-        © 2025 AMSON. All rights reserved.
-        <span class="footer-separator">•</span>
-        <a href="terms.html" class="footer-link">Terms & Conditions</a>
-        <span class="footer-separator">•</span>
-        <a href="privacy.html" class="footer-link">Privacy Policy</a>
-      </p>
-      <p class="footer-disclaimer">
-        AMSON is a paper trading and educational platform. No financial advice.
-      </p>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-row">
+      <p>© 2025 AMSON. All rights reserved.</p>
+      <div>
+        <a href="terms.html">Terms & Conditions</a>
+        <span>·</span>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+      <p>Educational signal platform. Not financial advice.</p>
     </div>
-
   </div>
 </footer>
 
-<!-- ================= HIDDEN IFRAME ================= -->
-<iframe
-  name="hidden_iframe"
-  style="display:none;"
-  onload="formSubmitted()"
-></iframe>
+<iframe name="hidden_iframe" style="display:none" onload="if(typeof formSent!=='undefined'&&formSent){document.querySelector('.signup-row').style.display='none';document.getElementById('formSuccess').style.display='block';}"></iframe>
 
-<!-- ================= SCRIPTS ================= -->
 <script src="script.js"></script>
-
-<script>
-  let submitted = false;
-
-  function formSubmitted() {
-    if (!submitted) return;
-
-    document.querySelector(".signup-form").style.display = "none";
-    document.getElementById("successMessage").style.display = "block";
-  }
-</script>
-
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (!target) return;
-
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    });
-  });
-</script>
-
 </body>
 </html>
