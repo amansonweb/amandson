@@ -48,14 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Interactive Hero Demo ---------- */
   const chips = document.querySelectorAll('.demo-chip');
-  const dsbTicker  = document.getElementById('dsbTicker');
-  const dsbSignal  = document.getElementById('dsbSignal');
-  const dsbPrice   = document.getElementById('dsbPrice');
-  const dbdTrend   = document.getElementById('dbdTrend');
-  const dbdTiming  = document.getElementById('dbdTiming');
-  const dbdMomentum= document.getElementById('dbdMomentum');
-  const demoCandles= document.getElementById('demoCandles');
-  const signalBox  = document.getElementById('demoSignalBox');
+  const dsbTicker   = document.getElementById('dsbTicker');
+  const dsbSignal   = document.getElementById('dsbSignal');
+  const dsbPrice    = document.getElementById('dsbPrice');
+  const dbdTrend    = document.getElementById('dbdTrend');
+  const dbdTiming   = document.getElementById('dbdTiming');
+  const dbdMomentum = document.getElementById('dbdMomentum');
+  const demoCandles = document.getElementById('demoCandles');
+  const signalBox   = document.getElementById('demoSignalBox');
 
   const candlePatterns = {
     BUY:  [28,38,45,35,52,60,70,80],
@@ -70,36 +70,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateDemo(chip) {
     const { ticker, signal, price, trend, timing, momentum } = chip.dataset;
-
-    // Fade out
     signalBox.classList.add('animating');
-
     setTimeout(() => {
       dsbTicker.textContent = ticker;
       dsbSignal.textContent = signal;
       dsbPrice.textContent  = price;
-      dbdTrend.textContent  = trend;
-      dbdTiming.textContent = timing;
+      dbdTrend.textContent    = trend;
+      dbdTiming.textContent   = timing;
       dbdMomentum.textContent = momentum + ' in control';
-
-      // Color the signal
       setSignalClass(dsbSignal, signal, 'sig-');
-
-      // Color breakdown values
       const cls = signal === 'BUY' ? 'val-buy' : signal === 'SELL' ? 'val-sell' : 'val-wait';
       [dbdTrend, dbdTiming, dbdMomentum].forEach(el => {
         el.className = 'dbd-val ' + cls;
       });
-
-      // Rebuild candles
       const heights = candlePatterns[signal];
       const candles = demoCandles.querySelectorAll('.dc');
       candles.forEach((c, i) => {
         c.style.setProperty('--h', heights[i] + '%');
         c.className = 'dc ' + (signal === 'BUY' ? 'bull' : signal === 'SELL' ? 'bear' : 'flat');
       });
-
-      // Fade back in
       signalBox.classList.remove('animating');
     }, 200);
   }
@@ -112,43 +101,66 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Init with first chip
   if (chips.length) updateDemo(chips[0]);
 
-
+  /* ---------- Ticker ribbon ---------- */
   const stocks = [
-    { sym: 'AAPL',  sig: 'BUY',  cls: 'buy' },
-    { sym: 'NVDA',  sig: 'SELL', cls: 'sell' },
-    { sym: 'TSLA',  sig: 'WAIT', cls: 'wait' },
-    { sym: 'MSFT',  sig: 'BUY',  cls: 'buy' },
-    { sym: 'AMZN',  sig: 'BUY',  cls: 'buy' },
-    { sym: 'META',  sig: 'SELL', cls: 'sell' },
-    { sym: 'GOOG',  sig: 'WAIT', cls: 'wait' },
-    { sym: 'PLTR',  sig: 'BUY',  cls: 'buy' },
-    { sym: 'NFLX',  sig: 'SELL', cls: 'sell' },
-    { sym: 'AMD',   sig: 'WAIT', cls: 'wait' },
+    { sym: 'AAPL', sig: 'BUY',  cls: 'buy' },
+    { sym: 'NVDA', sig: 'SELL', cls: 'sell' },
+    { sym: 'TSLA', sig: 'WAIT', cls: 'wait' },
+    { sym: 'MSFT', sig: 'BUY',  cls: 'buy' },
+    { sym: 'AMZN', sig: 'BUY',  cls: 'buy' },
+    { sym: 'META', sig: 'SELL', cls: 'sell' },
+    { sym: 'GOOG', sig: 'WAIT', cls: 'wait' },
+    { sym: 'PLTR', sig: 'BUY',  cls: 'buy' },
+    { sym: 'NFLX', sig: 'SELL', cls: 'sell' },
+    { sym: 'AMD',  sig: 'WAIT', cls: 'wait' },
   ];
 
   const track = document.getElementById('tickerTrack');
   if (track) {
-    // Double for seamless loop
     [...stocks, ...stocks].forEach(s => {
       const chip = document.createElement('div');
       chip.className = 'tick-chip';
       chip.innerHTML = `<span class="tick-sym">${s.sym}</span><span class="tick-badge ${s.cls}">${s.sig}</span>`;
       track.appendChild(chip);
     });
-
     let pos = 0;
-    const speed = 0.5;
     function scroll() {
-      pos += speed;
+      pos += 0.5;
       const half = track.scrollWidth / 2;
       if (pos >= half) pos = 0;
       track.style.transform = `translateX(-${pos}px)`;
       requestAnimationFrame(scroll);
     }
     scroll();
+  }
+
+  /* ---------- P&L demo calendar ---------- */
+  const pnlCal = document.getElementById('pnlDemoCal');
+  if (pnlCal) {
+    // April 2026: starts on Wednesday (index 3), 30 days
+    const startDay = 3; // 0=Sun
+    const totalDays = 30;
+    const winDays  = new Set([1,3,5,7,8,10,11,14,15,16,19,21,22,25,26,28]);
+    const lossDays = new Set([2,4,6,9,13,17,20,24,27]);
+
+    // Empty cells before the 1st
+    for (let i = 0; i < startDay; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'cal-cell empty';
+      pnlCal.appendChild(cell);
+    }
+    for (let d = 1; d <= totalDays; d++) {
+      const cell = document.createElement('div');
+      const isToday = d === 29;
+      if (isToday)          cell.className = 'cal-cell today';
+      else if (winDays.has(d))  cell.className = 'cal-cell win';
+      else if (lossDays.has(d)) cell.className = 'cal-cell loss';
+      else                  cell.className = 'cal-cell empty';
+      cell.textContent = d;
+      pnlCal.appendChild(cell);
+    }
   }
 
   /* ---------- FAQ accordion ---------- */
@@ -163,9 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Scroll reveal ---------- */
   const revealTargets = document.querySelectorAll(
-    '.sig-card, .feat-row, .faq-item, .safety-card, .how-step'
+    '.sig-card, .feat-row, .faq-item, .safety-card, .pnl-feat, .pnl-demo-card'
   );
-
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -183,37 +194,25 @@ document.addEventListener('DOMContentLoaded', () => {
     io.observe(el);
   });
 
-  /* ---------- Typewriter loop in step 01 mock card ---------- */
+  /* ---------- Typewriter loop ---------- */
   const mcTyping = document.getElementById('mcTyping');
   if (mcTyping) {
     const words = ['NVDA', 'TSLA', 'MSFT', 'AAPL', 'AMZN', 'META', 'GOOG', 'PLTR'];
     let wIdx = 0, cIdx = 0, deleting = false;
-
     function typeLoop() {
       const word = words[wIdx];
       const display = word.slice(0, cIdx);
       mcTyping.innerHTML = display + '<span class="blink-cursor">|</span>';
-
       if (!deleting) {
         cIdx++;
-        if (cIdx > word.length) {
-          setTimeout(() => { deleting = true; typeLoop(); }, 1200);
-          return;
-        }
+        if (cIdx > word.length) { setTimeout(() => { deleting = true; typeLoop(); }, 1200); return; }
         setTimeout(typeLoop, 90);
       } else {
         cIdx--;
-        if (cIdx < 0) {
-          deleting = false;
-          cIdx = 0;
-          wIdx = (wIdx + 1) % words.length;
-          setTimeout(typeLoop, 300);
-          return;
-        }
+        if (cIdx < 0) { deleting = false; cIdx = 0; wIdx = (wIdx + 1) % words.length; setTimeout(typeLoop, 300); return; }
         setTimeout(typeLoop, 55);
       }
     }
-
     setTimeout(typeLoop, 800);
   }
 
