@@ -6,24 +6,24 @@
 
   <!-- ===== PRIMARY SEO ===== -->
   <title>AMSON — Stock Trading Signals App | BUY, SELL & WAIT Alerts</title>
-  <meta name="description" content="AMSON gives you instant stock trading signals — BUY, SELL, or WAIT — for any ticker. Get automatic alerts on the top 30 highest market cap stocks. Free for 30 days. Available on iOS." />
-  <meta name="keywords" content="stock signals, trading signals app, stock market app, buy sell signals, stock alerts, trading app iOS, stock analysis app, market signals, stock signal notifications, swing trading signals, day trading signals, stock screener app, NVDA signal, AAPL signal, stock trend analysis, when to buy stocks, when to sell stocks, stock market alerts, real-time stock signals, best trading app, stock momentum indicator, technical analysis app, stock market notifications, free stock signals, top stocks to buy, stock market tracker, investment signals app, stock chart analysis, market trend signals, iOS trading app" />
+  <meta name="description" content="AMSON gives you instant stock trading signals — BUY, SELL, or WAIT — for any ticker. Track your P&L, get watchlist alerts, and monitor the top 30 highest market cap stocks. Free for 30 days. Available on iOS." />
+  <meta name="keywords" content="stock signals, trading signals app, stock market app, buy sell signals, stock alerts, trading app iOS, stock analysis app, market signals, stock signal notifications, swing trading signals, day trading signals, stock screener app, NVDA signal, AAPL signal, stock trend analysis, when to buy stocks, when to sell stocks, stock market alerts, real-time stock signals, best trading app, stock momentum indicator, technical analysis app, stock market notifications, free stock signals, top stocks to buy, stock market tracker, investment signals app, stock chart analysis, market trend signals, iOS trading app, trading journal app, profit and loss tracker, P&L journal" />
   <meta name="author" content="AMSON" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://amson.app/" />
 
-  <!-- ===== OPEN GRAPH (Facebook, LinkedIn previews) ===== -->
+  <!-- ===== OPEN GRAPH ===== -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://amson.app/" />
   <meta property="og:title" content="AMSON — Stock Trading Signals | BUY, SELL & WAIT Alerts" />
-  <meta property="og:description" content="Search any stock ticker and get an instant signal. AMSON automatically monitors the top 30 market cap stocks and alerts you when signals change. Free 30-day trial." />
+  <meta property="og:description" content="Search any stock ticker and get an instant signal. Track your P&L, get watchlist alerts, and monitor the top 30 market cap stocks. Free 30-day trial." />
   <meta property="og:image" content="https://amson.app/og-image.png" />
   <meta property="og:site_name" content="AMSON" />
 
   <!-- ===== TWITTER CARD ===== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AMSON — Stock Trading Signals App" />
-  <meta name="twitter:description" content="Get BUY, SELL, or WAIT signals on any stock instantly. Auto-alerts on the top 30 highest market cap stocks. Download free on iOS." />
+  <meta name="twitter:description" content="Get BUY, SELL, or WAIT signals on any stock instantly. Track your P&L, get watchlist alerts. Download free on iOS." />
   <meta name="twitter:image" content="https://amson.app/og-image.png" />
 
   <!-- ===== APP STORE / MOBILE ===== -->
@@ -31,13 +31,13 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#0b1d39" />
 
-  <!-- ===== STRUCTURED DATA (Google Rich Results) ===== -->
+  <!-- ===== STRUCTURED DATA ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "AMSON — Trading Signals",
-    "description": "Search any stock ticker and instantly get a BUY, SELL, or WAIT signal. AMSON analyzes trend direction, entry timing, and market momentum. Auto-alerts on the top 30 highest market cap stocks.",
+    "description": "Search any stock ticker and instantly get a BUY, SELL, or WAIT signal. Track your P&L journal, get watchlist alerts, and auto-alerts on the top 30 highest market cap stocks.",
     "operatingSystem": "iOS",
     "applicationCategory": "FinanceApplication",
     "offers": {
@@ -82,6 +82,7 @@
   <ul class="nav-menu" id="navMenu">
     <li><a href="#signals">Signals</a></li>
     <li><a href="#how">How It Works</a></li>
+    <li><a href="#pnl">P&L Journal</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#safety">Safety</a></li>
   </ul>
@@ -100,12 +101,10 @@
   <div class="hero-grid"></div>
 
   <div class="hero-layout">
-
-    <!-- LEFT: Text -->
     <div class="hero-left">
       <div class="hero-eyebrow">
         <span class="pulse-dot"></span>
-        Search Any Stock · Auto-Alerts on Top 30
+        Search Any Stock · Watchlist Alerts · P&L Journal
       </div>
 
       <h1 class="hero-title">
@@ -114,7 +113,7 @@
       </h1>
 
       <p class="hero-body">
-        Type any ticker and get a clear signal in seconds. AMSON automatically watches the top 30 highest market cap stocks and alerts you when things change — the safest picks, monitored 24/7.
+        Type any ticker and get a clear BUY, SELL, or WAIT signal in seconds. Save stocks to your Watchlist for personal alerts, and track every trade in your P&L Journal — all in one place.
       </p>
 
       <div class="hero-cta">
@@ -126,15 +125,12 @@
       </div>
     </div>
 
-    <!-- RIGHT: Interactive Signal Demo -->
     <div class="hero-right">
       <div class="demo-card">
-
         <div class="demo-header">
           <span class="demo-label">TRY IT — PICK A STOCK</span>
           <span class="demo-live"><span class="live-dot"></span>LIVE</span>
         </div>
-
         <div class="demo-chips" id="demoChips">
           <button class="demo-chip active" data-ticker="AAPL"  data-signal="BUY"  data-price="$212.49" data-trend="Uptrend" data-timing="Good entry" data-momentum="Buyers">AAPL</button>
           <button class="demo-chip"        data-ticker="NVDA"  data-signal="SELL" data-price="$167.52" data-trend="Downtrend" data-timing="Not yet" data-momentum="Sellers">NVDA</button>
@@ -143,18 +139,14 @@
           <button class="demo-chip"        data-ticker="AMZN"  data-signal="BUY"  data-price="$198.76" data-trend="Uptrend" data-timing="Good entry" data-momentum="Buyers">AMZN</button>
           <button class="demo-chip"        data-ticker="META"  data-signal="SELL" data-price="$548.30" data-trend="Downtrend" data-timing="Not yet" data-momentum="Sellers">META</button>
           <button class="demo-chip"        data-ticker="GOOG"  data-signal="WAIT" data-price="$172.88" data-trend="Sideways" data-timing="Unclear" data-momentum="Neutral">GOOG</button>
-          <button class="demo-chip"        data-ticker="PLTR"  data-signal="BUY"  data-price="$89.44" data-trend="Uptrend" data-timing="Good entry" data-momentum="Buyers">PLTR</button>
+          <button class="demo-chip"        data-ticker="PLTR"  data-signal="BUY"  data-price="$89.44"  data-trend="Uptrend" data-timing="Good entry" data-momentum="Buyers">PLTR</button>
         </div>
-
         <div class="demo-result" id="demoResult">
-          <!-- Signal Box -->
           <div class="demo-signal-box" id="demoSignalBox">
             <div class="dsb-ticker" id="dsbTicker">AAPL</div>
             <div class="dsb-signal" id="dsbSignal">BUY</div>
             <div class="dsb-price" id="dsbPrice">$212.49</div>
           </div>
-
-          <!-- Breakdown -->
           <div class="demo-breakdown">
             <div class="dbd-row">
               <span class="dbd-label">Long-term trend</span>
@@ -169,8 +161,6 @@
               <span class="dbd-val" id="dbdMomentum">Buyers in control</span>
             </div>
           </div>
-
-          <!-- Candle chart animation -->
           <div class="demo-candles" id="demoCandles">
             <div class="dc" style="--h:38%"></div>
             <div class="dc" style="--h:52%"></div>
@@ -181,16 +171,12 @@
             <div class="dc" style="--h:68%"></div>
             <div class="dc" style="--h:80%"></div>
           </div>
-
           <p class="demo-disclaimer">Not financial advice. For educational purposes only.</p>
         </div>
-
       </div>
     </div>
-
   </div>
 
-  <!-- Ticker ribbon — full width, inside hero, contained -->
   <div class="ticker-ribbon">
     <div class="ticker-ribbon-inner">
       <span class="ticker-ribbon-label">LIVE SIGNALS</span>
@@ -200,7 +186,6 @@
       <span class="ticker-ribbon-live"><span class="live-dot"></span>LIVE</span>
     </div>
   </div>
-
 </section>
 
 <!-- ========== SIGNAL CARDS ========== -->
@@ -209,7 +194,6 @@
     <p class="section-eyebrow">WHAT AMSON DELIVERS</p>
     <h2 class="section-heading">One search.<br>One answer.</h2>
     <p class="section-sub">Every stock you analyze gets one of three clear verdicts — no charts to decode, no jargon to learn.</p>
-
     <div class="signal-trio">
       <div class="sig-card sig-buy">
         <div class="sig-verdict">BUY</div>
@@ -233,16 +217,14 @@
 <!-- ========== FEATURES ========== -->
 <section class="features-section" id="how">
   <div class="container">
-
     <p class="section-eyebrow">HOW IT WORKS</p>
-    <h2 class="section-heading">Three steps.<br>Total clarity.</h2>
+    <h2 class="section-heading">Four steps.<br>Total clarity.</h2>
 
     <div class="feat-list">
 
+      <!-- Step 01 -->
       <div class="feat-row">
-        <div class="feat-num-col">
-          <span class="feat-num">01</span>
-        </div>
+        <div class="feat-num-col"><span class="feat-num">01</span></div>
         <div class="feat-body">
           <h3>Search a ticker</h3>
           <p>Type any US stock symbol or pick from the quick-picks list of the top 30 most-traded stocks. AMSON handles everything from there.</p>
@@ -261,10 +243,9 @@
 
       <div class="feat-rule"></div>
 
+      <!-- Step 02 -->
       <div class="feat-row feat-flip">
-        <div class="feat-num-col">
-          <span class="feat-num">02</span>
-        </div>
+        <div class="feat-num-col"><span class="feat-num">02</span></div>
         <div class="feat-body">
           <h3>Get your signal</h3>
           <p>AMSON analyzes trend direction, entry timing, and buyer/seller momentum — and delivers a verdict with a clear explanation of why.</p>
@@ -285,37 +266,190 @@
 
       <div class="feat-rule"></div>
 
+      <!-- Step 03 — updated with watchlist alerts -->
       <div class="feat-row">
-        <div class="feat-num-col">
-          <span class="feat-num">03</span>
-        </div>
+        <div class="feat-num-col"><span class="feat-num">03</span></div>
         <div class="feat-body">
-          <h3>Auto-alerts on the top 30</h3>
-          <p>You don't have to do anything. AMSON automatically monitors the <strong>30 highest market cap stocks</strong> — AAPL, NVDA, MSFT, and more — and pushes you a notification the moment their signal changes. These are the market's most established companies, chosen because they carry the least risk and the most reliable signals.</p>
+          <h3>Get alerted — your way</h3>
+          <p>AMSON automatically monitors the <strong>top 30 highest market cap stocks</strong> and pushes you a notification the moment their signal changes. Save any stock to your <strong>Watchlist</strong> to get personalized BUY, SELL, and HOLD alerts for exactly the stocks you care about.</p>
           <div class="top30-note">
-            <span class="top30-icon">🛡️</span>
-            <span>Highest market cap = most stable = safer signals</span>
+            <span class="top30-icon">🔔</span>
+            <span>Top 30 alerts + personalized Watchlist alerts</span>
           </div>
         </div>
         <div class="feat-visual">
           <div class="mock-card mock-notif-card">
-            <div class="mn-header">AUTO-ALERTS · TOP 30</div>
+            <div class="mn-header">YOUR ALERTS</div>
             <div class="mn-row">
               <div class="mn-dot green"></div>
-              <div class="mn-text"><strong>AAPL — BUY</strong><span>Crossed above trend</span></div>
+              <div class="mn-text"><strong>AAPL — BUY</strong><span>Top 30 · Crossed above trend</span></div>
             </div>
             <div class="mn-row">
               <div class="mn-dot red"></div>
-              <div class="mn-text"><strong>NVDA — SELL</strong><span>Sellers in control</span></div>
+              <div class="mn-text"><strong>NVDA — SELL</strong><span>Watchlist · Sellers in control</span></div>
             </div>
             <div class="mn-row">
               <div class="mn-dot amber"></div>
-              <div class="mn-text"><strong>TSLA — WAIT</strong><span>Hold for better entry</span></div>
+              <div class="mn-text"><strong>PLTR — HOLD</strong><span>Watchlist · Wait for entry</span></div>
             </div>
           </div>
         </div>
       </div>
 
+      <div class="feat-rule"></div>
+
+      <!-- Step 04 — P&L Journal (NEW) -->
+      <div class="feat-row feat-flip">
+        <div class="feat-num-col"><span class="feat-num">04</span></div>
+        <div class="feat-body">
+          <h3>Track every trade</h3>
+          <p>Log your trades in the <strong>P&L Journal</strong> — your personal trading diary. See your total profit, win rate, streaks, and a full calendar of winning and losing days. Know exactly where you stand, every trading day.</p>
+          <div class="pnl-stats-row">
+            <div class="pnl-stat">
+              <span class="pnl-stat-val green">+$4,280</span>
+              <span class="pnl-stat-lbl">Total P&L</span>
+            </div>
+            <div class="pnl-stat">
+              <span class="pnl-stat-val">74%</span>
+              <span class="pnl-stat-lbl">Win rate</span>
+            </div>
+            <div class="pnl-stat">
+              <span class="pnl-stat-val">🔥 5</span>
+              <span class="pnl-stat-lbl">Day streak</span>
+            </div>
+          </div>
+        </div>
+        <div class="feat-visual">
+          <div class="mock-card">
+            <div class="mc-pnl-header">
+              <span class="mc-pnl-total">+$4,280</span>
+              <span class="mc-pnl-badge">Profitable ✓</span>
+            </div>
+            <div class="mc-pnl-bar">
+              <div class="mc-pnl-bar-fill"></div>
+            </div>
+            <div class="mc-pnl-cal">
+              <div class="mc-cal-row">
+                <div class="mc-cal-cell win">3</div>
+                <div class="mc-cal-cell loss">4</div>
+                <div class="mc-cal-cell win">5</div>
+                <div class="mc-cal-cell empty">6</div>
+                <div class="mc-cal-cell win">7</div>
+              </div>
+              <div class="mc-cal-row">
+                <div class="mc-cal-cell win">10</div>
+                <div class="mc-cal-cell win">11</div>
+                <div class="mc-cal-cell loss">12</div>
+                <div class="mc-cal-cell empty">13</div>
+                <div class="mc-cal-cell win">14</div>
+              </div>
+              <div class="mc-cal-row">
+                <div class="mc-cal-cell win">17</div>
+                <div class="mc-cal-cell loss">18</div>
+                <div class="mc-cal-cell win">19</div>
+                <div class="mc-cal-cell win">20</div>
+                <div class="mc-cal-cell today">21</div>
+              </div>
+            </div>
+            <div class="mc-pnl-trades">
+              <div class="mc-trade-row"><span class="mc-trade-tag long">LONG</span><span class="mc-trade-sym">AAPL</span><span class="mc-trade-pnl green">+$890</span></div>
+              <div class="mc-trade-row"><span class="mc-trade-tag short">SHORT</span><span class="mc-trade-sym">TSLA</span><span class="mc-trade-pnl red">-$340</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== P&L JOURNAL SECTION (NEW) ========== -->
+<section class="pnl-section" id="pnl">
+  <div class="container">
+    <div class="pnl-grid">
+      <div class="pnl-left">
+        <p class="section-eyebrow">P&L JOURNAL</p>
+        <h2 class="pnl-heading">Your trades.<br>Your edge.<br><em>Tracked.</em></h2>
+        <p class="pnl-lead">Stop guessing if you're profitable. The P&L Journal gives you a clear picture of every trade you make — wins, losses, streaks, and your overall edge.</p>
+        <div class="pnl-features">
+          <div class="pnl-feat">
+            <div class="pnl-feat-icon">📅</div>
+            <div>
+              <strong>Calendar view</strong>
+              <p>See every trading day at a glance. Green for wins, red for losses — your whole month in one view.</p>
+            </div>
+          </div>
+          <div class="pnl-feat">
+            <div class="pnl-feat-icon">📊</div>
+            <div>
+              <strong>Win rate & streaks</strong>
+              <p>Know exactly how often you win and how long your current streak is. Stay accountable.</p>
+            </div>
+          </div>
+          <div class="pnl-feat">
+            <div class="pnl-feat-icon">🔔</div>
+            <div>
+              <strong>Daily reminders</strong>
+              <p>Get a push notification after market close every trading day reminding you to log your trades.</p>
+            </div>
+          </div>
+          <div class="pnl-feat">
+            <div class="pnl-feat-icon">🔥</div>
+            <div>
+              <strong>Streak notifications</strong>
+              <p>Build a habit. AMSON alerts you when your logging streak is at risk — and celebrates when you're on a roll.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pnl-right">
+        <div class="pnl-demo-card">
+          <div class="pnl-demo-score">
+            <div>
+              <div class="pnl-demo-label">Total P&L</div>
+              <div class="pnl-demo-total">+$23,750</div>
+            </div>
+            <div class="pnl-demo-badge">Elite 🔥</div>
+          </div>
+          <div class="pnl-demo-bar-wrap">
+            <div class="pnl-demo-bar-track">
+              <div class="pnl-demo-bar-green"></div>
+              <div class="pnl-demo-bar-red"></div>
+            </div>
+          </div>
+          <div class="pnl-demo-stats">
+            <div class="pnl-demo-stat"><span class="pnl-ds-num">24</span><span class="pnl-ds-lbl">Trades</span></div>
+            <div class="pnl-demo-divider"></div>
+            <div class="pnl-demo-stat"><span class="pnl-ds-num green">18</span><span class="pnl-ds-lbl">Wins</span></div>
+            <div class="pnl-demo-divider"></div>
+            <div class="pnl-demo-stat"><span class="pnl-ds-num red">6</span><span class="pnl-ds-lbl">Losses</span></div>
+            <div class="pnl-demo-divider"></div>
+            <div class="pnl-demo-stat"><span class="pnl-ds-num green">75%</span><span class="pnl-ds-lbl">Win rate</span></div>
+          </div>
+          <!-- Mini calendar -->
+          <div class="pnl-demo-cal-wrap">
+            <div class="pnl-demo-cal-month">April 2026</div>
+            <div class="pnl-demo-cal-grid" id="pnlDemoCal"></div>
+          </div>
+          <!-- Notifications preview -->
+          <div class="pnl-notif-stack">
+            <div class="pnl-notif">
+              <span class="pnl-notif-icon">📊</span>
+              <div>
+                <strong>Trading day ended!</strong>
+                <span>Don't forget to log your P&L</span>
+              </div>
+            </div>
+            <div class="pnl-notif">
+              <span class="pnl-notif-icon">🔥</span>
+              <div>
+                <strong>5-day streak!</strong>
+                <span>You've logged 5 days in a row</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -329,7 +463,7 @@
         <h2 class="why30-heading">The safest stocks<br>in the market.<br><em>Watched for you.</em></h2>
       </div>
       <div class="why30-right">
-        <p class="why30-lead">AMSON automatically sends you signal alerts for the 30 companies with the highest market cap — no setup required, no watchlist needed.</p>
+        <p class="why30-lead">AMSON automatically sends you signal alerts for the 30 companies with the highest market cap — plus personalized alerts for every stock on your Watchlist.</p>
         <div class="why30-reasons">
           <div class="why30-reason">
             <div class="why30-icon">📊</div>
@@ -348,8 +482,8 @@
           <div class="why30-reason">
             <div class="why30-icon">🔔</div>
             <div>
-              <strong>Always-on alerts</strong>
-              <p>You don't have to search or check. AMSON watches all 30 around the clock and pushes you a notification the moment a signal changes.</p>
+              <strong>Your Watchlist + Top 30</strong>
+              <p>You don't have to do anything. AMSON watches all 30 around the clock and also sends personalized BUY, SELL, and HOLD alerts for every stock you add to your Watchlist.</p>
             </div>
           </div>
         </div>
@@ -378,13 +512,11 @@
 <!-- ========== FAQ ========== -->
 <section class="faq-section" id="faq">
   <div class="container faq-inner">
-
     <div class="faq-left">
       <p class="section-eyebrow">FAQ</p>
       <h2 class="faq-heading">Questions?</h2>
       <p class="faq-sub">Everything you need to know before downloading.</p>
     </div>
-
     <div class="faq-right">
       <div class="faq-item">
         <button class="faq-q">Is this financial advice?<span class="faq-icon">+</span></button>
@@ -392,15 +524,19 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">What stocks does AMSON cover?<span class="faq-icon">+</span></button>
-        <div class="faq-a">AMSON covers the top 30 most-traded US stocks including AAPL, NVDA, TSLA, MSFT, AMZN, META, GOOG, PLTR and more. You can also search any other US ticker directly.</div>
+        <div class="faq-a">AMSON covers the top 30 most-traded US stocks including AAPL, NVDA, TSLA, MSFT, AMZN, META, GOOG, PLTR and more. You can also search any other US ticker directly and add it to your Watchlist for personalized alerts.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">How do notifications work?<span class="faq-icon">+</span></button>
-        <div class="faq-a">AMSON automatically monitors the top 30 highest market cap stocks — regardless of what's in your watchlist — and sends you a push notification whenever any of their signals change. These 30 companies are chosen because they're the most stable and established in the market, giving you the most reliable alerts with the least risk.</div>
+        <div class="faq-a">AMSON sends two types of signal alerts: automatic alerts for the top 30 highest market cap stocks whenever their signal changes, and personalized BUY, SELL, or HOLD alerts for every stock you add to your Watchlist. You also get a daily reminder after market close to log your P&L, and streak notifications to keep you accountable.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What's the difference between Search and Notifications?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Search lets you analyze any US stock on demand — type a ticker and instantly get a BUY, SELL, or WAIT signal. Notifications are automatic and only cover the top 30 market cap stocks. You save stocks to your watchlist to keep them organized, but notifications come from the top 30 regardless of your watchlist.</div>
+        <button class="faq-q">What is the P&L Journal?<span class="faq-icon">+</span></button>
+        <div class="faq-a">The P&L Journal is your personal trade log built into AMSON. You log each trade — ticker, Long or Short, profit or loss amount, and optional notes. AMSON shows you your total P&L, win rate, average win vs. loss, and a full calendar view of your trading days. You get daily reminders to log and streak notifications to keep you consistent. All data is private and synced to your account.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's the difference between Search, Watchlist, and Top 30 Alerts?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Search lets you analyze any US stock on demand instantly. Watchlist lets you save stocks and receive personalized BUY, SELL, and HOLD alerts for those specific stocks. Top 30 Alerts are automatic and monitor the 30 highest market cap stocks regardless of your Watchlist — the most stable, established companies in the market.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Is AMSON free?<span class="faq-icon">+</span></button>
@@ -408,14 +544,13 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Does this involve real money?<span class="faq-icon">+</span></button>
-        <div class="faq-a">No. AMSON is a signal and insight platform only. We don't execute trades or handle real money in any way.</div>
+        <div class="faq-a">No. AMSON is a signal and insight platform only. We don't execute trades or handle real money in any way. The P&L Journal is a self-reported personal log — it is not connected to any brokerage or real trading account.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Where is AMSON available?<span class="faq-icon">+</span></button>
         <div class="faq-a">AMSON is available now on the Apple App Store for iPhone. Download today and your first 30 days are free.</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -425,7 +560,7 @@
     <div class="safety-card">
       <div class="safety-badge">Transparency & Safety</div>
       <h2>Built for insight.<br>Not financial risk.</h2>
-      <p>AMSON is a stock signal and educational platform. We analyze publicly available market data and surface it in a clear format. We do <strong>not</strong> provide financial advice, execute trades, or involve real money of any kind. All signals are informational and educational only.</p>
+      <p>AMSON is a stock signal, watchlist, and personal trading journal platform. We analyze publicly available market data and surface it in a clear format. We do <strong>not</strong> provide financial advice, execute trades, or involve real money of any kind. All signals are informational and educational only. Your P&L Journal data is private and only visible to you.</p>
     </div>
   </div>
 </section>
@@ -450,7 +585,7 @@
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-row">
-      <p>© 2025 AMSON. All rights reserved.</p>
+      <p>© 2026 AMSON. All rights reserved.</p>
       <div>
         <a href="terms.html">Terms & Conditions</a>
         <span>·</span>
